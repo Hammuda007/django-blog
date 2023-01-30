@@ -5,6 +5,10 @@ from.forms import PostForm
 # Create your views here.
 
 
+
+### fuctions based viwes 
+
+
 def post_list(request):
     all=Post.objects.all()
     return render(request,'posts.html',{'data':all})
@@ -60,7 +64,14 @@ def delete_post(request,id):
     
 
 
+### Class based viwes
 
+from django.views.generic import ListView
+
+
+class PostList(ListView):
+    model=Post
+    template_name='posts.html'
 
     
 
