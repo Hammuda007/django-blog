@@ -13,4 +13,4 @@ class PostAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
     list_filter=['author','tags']
     search_fields=['title','content']
 
-admin.site.register(Post,PostAdmin)
+#admin.site.register(Post,PostAdmin)

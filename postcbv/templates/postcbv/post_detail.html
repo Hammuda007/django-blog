@@ -1,0 +1,15 @@
+<h1>{{object}}</h1>
+<a href="/blog/{{object.id}}/edit">Edit Post</a>
+<a href="/blog/{{object.id}}/delete">Delete Post</a>
+<hr>
+
+
+
+
+
+<p>
+    {{object.content|safe}}
+</p>
+
+
+<img src="{{object.image.url}}" alt="">

@@ -66,10 +66,10 @@ def delete_post(request,id):
 
 ### Class based viwes
 
-from django.views.generic import ListView
+#from django.views.generic import ListView
 
 
-class PostList(ListView):
+#class PostList(ListView):
     model=Post
     template_name='posts.html'
 
