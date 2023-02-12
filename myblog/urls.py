@@ -17,24 +17,25 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
-#from posts.views import post_list , post_detail, create_post, edit_post, delete_post, PostList, PostDetail
-from postcbv.views import PostList, PostDetail, PostCreate, PostUpdate, PostDelete
+from posts.views import post_list , post_detail, create_post, edit_post, delete_post
+#from postcbv.views import PostList, PostDetail, PostCreate, PostUpdate, PostDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
    
-    path('blog/', PostList.as_view ()),
-    path('blog/create',PostCreate.as_view()),
+   
+    #path('blog/create',PostCreate.as_view()),
+   
+    #path('blog/<int:pk>', PostDetail.as_view()),
+    #path('blog/<int:pk>/edit', PostUpdate.as_view()),
+    #path('blog/<int:pk>/delete', PostDelete.as_view()),
     #path('blog/', PostList.as_view()),
-    path('blog/<int:pk>', PostDetail.as_view()),
-    path('blog/<int:pk>/edit', PostUpdate.as_view()),
-     path('blog/<int:pk>/delete', PostDelete.as_view()),
-
-
-    #path('blog/create', create_post),
-    #path('blog/<int:id>', post_detail),
-    #path('blog/<int:id>/edit', edit_post),
+    path('blog/', post_list),
+    path('blog/create', create_post),
+    path('blog/<int:id>', post_detail),
+    path('blog/<int:id>/edit', edit_post),
+    path('blog/<int:id>/edit', delete_post),
    
 ]
 

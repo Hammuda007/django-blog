@@ -11,7 +11,7 @@ from.forms import PostForm
 
 def post_list(request):
     all=Post.objects.all()
-    return render(request,'posts.html',{'data':all})
+    return render(request,'post_list.html',{'data':all})
 
 
 
