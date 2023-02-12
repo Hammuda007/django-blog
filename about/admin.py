@@ -13,3 +13,4 @@ admin.site.register(models.Edeucation)
 admin.site.register(models.Experience)
 admin.site.register(models.Service)
 admin.site.register(models.Projects)
+
