@@ -4,6 +4,13 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class Category(models.Model):
+    name=models.CharField(max_length=50)
+
+
+    
+    def __str__(self):
+        return self.name
 
 
 
@@ -14,8 +21,7 @@ class Post(models.Model):
     author=models.ForeignKey(User,related_name='post_author',on_delete=models.CASCADE)
 
     tags = TaggableManager()
-
-    Category=models.ForeignKey('Category',related_name='post_category',on_delete=models.CASCADE,null=True,blank=True)
+    Category=models.ForeignKey(Category,related_name='post_category',on_delete=models.CASCADE,null=True,blank=True)
 
 
 
@@ -24,13 +30,6 @@ class Post(models.Model):
 
 
 
-class Category(models.Model):
-    name=models.CharField(max_length=50)
-
-
-    
-    def __str__(self):
-        return self.name
 
 
 

@@ -11,7 +11,7 @@
   
   <title>Blog - Minibar</title>
   
-  <link rel="shortcut icon" type="image/ico" href="../assets/favicon.ico">
+  <link rel="shortcut icon" type="image/ico" href"../assets/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="{% static '/assets/css/themify-icons.css' %}">
   
@@ -126,27 +126,20 @@
                   <option value="cat-4">UI/UX</option>
                 </select>
               </div>
-              <div class="input-group px-2">
-                <select class="vg-select">
-                  <option value="">Sort By</option>
-                  <option value="cat-1">Newest</option>
-                  <option value="cat-2">Popular</option>
-                  <option value="cat-3">Recommended</option>
-                </select>
-              </div>
+              
             </div>
           </div>
         </div>
         <div class="row post-grid">
             
-           {% for item in data %}
+           {% for item in data%}
              <div class="col-md-6 col-lg-4">
               <div class="card">
               <div class="img-place">
-                <img src="../assets/img/work/work-1.jpg" alt="">
+                <img src="{{item.image.url}}" alt="">
               </div>
               <div class="caption">
-                <a href="javascript:void(0)" class="post_category">{{item.category}}</a>
+                <a href="javascript:void(0)" class="post-category">{{item.Category}}</a>
                 <a href="#" class="post-title">{{item}}</a>
                 <span class="post-date"><span class="sr-only">Published on</span></span>
               </div>
