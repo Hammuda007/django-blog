@@ -165,7 +165,7 @@
             <div class="progress-wrapper wow fadeInUp">
               <span class="caption">{{skill}}</span>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 86%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">86%</div>
+                <div class="progress-bar" role="progressbar" style="width:{{skill.percentage}}%;" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100">%</div>
               </div>
            
            
@@ -179,7 +179,7 @@
             <div class="progress-wrapper wow fadeInUp">
               <span class="caption">{{skill}}</span>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 86%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">86%</div>
+                <div class="progress-bar" role="progressbar" style="width:{{skill.percentage}}%;" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100">{{skill.percentage}}%</div>
               </div>
             </div>
             {% endfor %}
@@ -194,59 +194,31 @@
           <div class="col-md-6 wow fadeInRight">
             <h2 class="fg-dark">Education</h2>
             <ul class="timeline mt-4 pr-md-5">
+              {% for item in edeucation  %}
               <li>
-                <div class="title">2010</div>
+                <div class="title">{{item.year}}</div>
                 <div class="details">
-                  <h5>Specialize of course</h5>
-                  <small class="fg-theme">University of Study</small>
-                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                  <h5>{{item.title}}</h5>
+                  <small class="fg-theme">{{item.place}}</small>
+                  <p>{{item.description}}</p>
                 </div>
               </li>
-              <li>
-                <div class="title">2009</div>
-                <div class="details">
-                  <h5>Specialize of course</h5>
-                  <small class="fg-theme">University of Study</small>
-                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-                </div>
-              </li>
-              <li>
-                <div class="title">2008</div>
-                <div class="details">
-                  <h5>Specialize of course</h5>
-                  <small class="fg-theme">University of Study</small>
-                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-                </div>
-              </li>
+              {% endfor %}
             </ul>
           </div>
           <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
             <h2 class="fg-dark">Experience</h2>
             <ul class="timeline mt-4 pr-md-5">
+              {% for item in experience  %}
               <li>
-                <div class="title">2017 - Current</div>
+                <div class="title">{{item.year}}</div>
                 <div class="details">
-                  <h5>Specialize of course</h5>
-                  <small class="fg-theme">University of Study</small>
-                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                  <h5>{{item.title}}</h5>
+                  <small class="fg-theme">{{item.place}}</small>
+                  <p>{{item.description}}</p>
                 </div>
               </li>
-              <li>
-                <div class="title">2014</div>
-                <div class="details">
-                  <h5>Specialize of course</h5>
-                  <small class="fg-theme">University of Study</small>
-                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-                </div>
-              </li>
-              <li>
-                <div class="title">2011</div>
-                <div class="details">
-                  <h5>Specialize of course</h5>
-                  <small class="fg-theme">University of Study</small>
-                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-                </div>
-              </li>
+              {% endfor %} 
             </ul>
           </div>
         </div>
